@@ -156,9 +156,6 @@ footer a {
   #links{
     display: flex;
   }
-  #wrapper{
-    display: block;
-  }
   #wrapper img.img{
     width: 300px;
     margin-top: 40px;
