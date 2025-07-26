@@ -7,58 +7,106 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="header">
-    <div class="logo">PalmTech Institute</div>
-    <div class="free-badge">100% FREE</div>
-  </header>
+  <div id="wrapper">
+    <p id="close" title="close">X</p>
+    <img src="code.jpg" class="img" width="450px" alt="">
+  </div>
+  <div id="container">
+    <header class="header">
+      <div class="logo">PalmTech Institute</div>
+      <button id="enroll" class="enroll">Enroll now</button>
+      <button id="enroll" class="qrCode">Scan QR CODE</button>
+      <div class="free-badge">100% FREE</div>
+    </header>
+    <div id="links">
+      <button id="enroll" class="mobileEnroll">Enroll now</button>
+      <button id="enroll" class="mobileQrCode">Scan QR CODE</button>
+    </div>
+    <main class="container">
+      <section class="intro">
+        <h1><span class="highlight">PalmTech</span> Enlightenment Program</h1>
+        <p class="subtitle">Empowering Nigerian Youth With Tech Skills</p>
+      </section>
 
-  <main class="container">
-    <section class="intro">
-      <h1><span class="highlight">PalmTech</span> Enlightenment Program</h1>
-      <p class="subtitle">Empowering Nigerian Youth With Tech Skills</p>
-    </section>
+      <section class="grid">
+        <div class="card">
+          <h2>Topics</h2>
+          <ul>
+            <li>What is Tech? Why Should Youths Care?</li>
+            <li>Getting Started with Web Development</li>
+            <li>How to Earn With Tech</li>
+            <li>Building a Career in Tech</li>
+          </ul>
+        </div>
 
-    <section class="grid">
-      <div class="card">
-        <h2>Topics</h2>
+        <div class="card">
+          <h2>Benefits</h2>
+          <ul>
+            <li>Certificate of Participation</li>
+            <li>Scholarship Opportunities</li>
+            <li>Palmtech Bonus Drop (undisclosed surprise)</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="highlights">
+        <h2>Key Highlights</h2>
         <ul>
-          <li>What is Tech? Why Should Youths Care?</li>
-          <li>Getting Started with Web Development</li>
-          <li>How to Earn With Tech</li>
-          <li>Building a Career in Tech</li>
+          <li>✅ 100% Online Event</li>
+          <li>✅ 2-days Awareness Program</li>
+          <li>✅ Target 1000+ Students & Youth</li>
         </ul>
-      </div>
+      </section>
 
-      <div class="card">
-        <h2>Benefits</h2>
-        <ul>
-          <li>Certificate of Participation</li>
-          <li>Scholarship Opportunities</li>
-          <li>Palmtech Bonus Drop (undisclosed surprise)</li>
-        </ul>
-      </div>
-    </section>
+      <section class="sponsor">
+        <h3>Want to sponsor this impact-driven tech program?</h3>
+        <p>Partner with us to make this happen! <br><small>Sponsorship proposal available on request</small></p>
+      </section>
 
-    <section class="highlights">
-      <h2>Key Highlights</h2>
-      <ul>
-        <li>✅ 100% Online Event</li>
-        <li>✅ 2-days Awareness Program</li>
-        <li>✅ Target 1000+ Students & Youth</li>
-      </ul>
-    </section>
-
-    <section class="sponsor">
-      <h3>Want to sponsor this impact-driven tech program?</h3>
-      <p>Partner with us to make this happen! <br><small>Sponsorship proposal available on request</small></p>
-    </section>
-
-    <footer>
-      <p>Email: <a href="mailto:palmtechinstitute@gmail.com">palmtechinstitute@gmail.com</a></p>
-      <p>Phone Number: <a href="tel:09066700061">09066700061</a></p>
-    </footer>
-  </main>
+      <footer>
+        <p>Email: <a href="mailto:palmtechinstitute@gmail.com">palmtechinstitute@gmail.com</a></p>
+        <p>Phone Number: <a href="tel:09066700061">09066700061</a></p>
+      </footer>
+    </main>
+  </div>
+  
 
   <script src="script.js"></script>
 </body>
+<script>
+  const enroll = document.querySelector(".enroll");
+  const qrCode = document.querySelector(".qrCode");
+  const close = document.querySelector("#close");
+  const mobileEnroll = document.querySelector(".mobileEnroll");
+  const mobileQrCode = document.querySelector(".mobileQrCode")
+  enroll.onclick = function(){
+    const a = document.createElement("a");
+    a.href = "https://bit.ly/palmtech-EP";
+    a.target = "_blank";
+    document.querySelector("body").appendChild(a);
+    document.querySelector("body").removeChild(a);
+    a.click();
+  }
+
+  qrCode.onclick = function(){
+    document.querySelector("#container").style.display = "none";
+    document.querySelector("#wrapper").style.display = "block";
+  }
+  close.onclick = function(){
+    document.querySelector("#container").style.display = "block";
+    document.querySelector("#wrapper").style.display = "none";
+  }
+  mobileEnroll.onclick = function(){
+    const a = document.createElement("a");
+    a.href = "https://bit.ly/palmtech-EP";
+    a.target = "_blank";
+    document.querySelector("body").appendChild(a);
+    document.querySelector("body").removeChild(a);
+    a.click();
+  }
+  mobileQrCode.onclick = function(){
+    document.querySelector("#container").style.display = "none";
+    document.querySelector("#wrapper").style.display = "block";
+  }
+</script>
 </html>

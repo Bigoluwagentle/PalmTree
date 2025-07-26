@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section id="login" style="margin-top:20px;"> 
+        <h2>Login</h2> 
+        <input type="text" id="loginUsername" placeholder="Username" /> 
+        <input type="password" id="loginPassword" placeholder="Password" /> 
+        <button onclick="login()">Login</button> 
+    </section> 
+    
+    <p id="message"></p> 
+</body>
+<script>
+    function login() { 
+    const username = document.getElementById("loginUsername").value; 
+    const password = document.getElementById("loginPassword").value; 
+    
+    let users = JSON.parse(localStorage.getItem("users")) || []; 
+    
+    const validUser = users.find( 
+        user => user.username === username && user.password === password 
+    ); 
+    
+    if (validUser) { 
+        showMessage("Login successful!"); 
+    } else { 
+        showMessage("Invalid login details."); 
+    } 
+    } 
+    
+    function showMessage(text) { 
+        document.getElementById("message").innerText = text; 
+    } 
+</script>
+</html>
+
+
+ 

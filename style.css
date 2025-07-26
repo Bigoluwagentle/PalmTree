@@ -10,7 +10,21 @@ body {
   color: #222;
   line-height: 1.6;
 }
-
+#wrapper{
+  display: none;
+}
+#wrapper img.img{
+  display: block;
+  margin: auto;
+}
+#wrapper #close{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  color: red;
+  cursor: pointer;
+  font-weight: bold;
+  margin: 50px 50px 0px 100px;
+}
 .header {
   background: #084c61;
   color: white;
@@ -18,22 +32,43 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  width: 100%;
 }
 
 .logo {
   font-weight: bold;
   font-size: 1.3rem;
 }
-
+#enroll{
+  background: #00c896;
+  padding: 10px 15px;
+  border-radius: 50px;
+  font-weight: bold;
+  border: none;
+  color: white;
+  cursor: pointer;
+  &:hover{
+    background-color: #00d999;
+  }
+}
 .free-badge {
   background: #00c896;
   padding: 10px 15px;
   border-radius: 50px;
   font-weight: bold;
+  font-size: 13px;
 }
-
+#links{
+  position: fixed;
+  right: 10px;
+  bottom: 50px;
+  display: none;
+  flex-direction: column;
+  gap: 20px;
+}
 .container {
-  padding: 20px;
+  padding: 120px 20px 20px 20px;
 }
 
 .intro h1 {
@@ -113,4 +148,19 @@ footer {
 footer a {
   color: #00c896;
   text-decoration: none;
+}
+@media screen and (max-width : 700px){
+  .enroll, .qrCode{
+    display: none;
+  }
+  #links{
+    display: flex;
+  }
+  #wrapper{
+    display: block;
+  }
+  #wrapper img.img{
+    width: 300px;
+    margin-top: 40px;
+  }
 }
